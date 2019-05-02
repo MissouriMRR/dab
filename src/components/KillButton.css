@@ -1,0 +1,21 @@
+.KillButton {
+  align-items: center;
+  background: #FF9393;
+  border: solid 5px #5e5e5e;
+  border-radius: 10px;
+
+  /* Custom text-color override just for the kill button */
+  color: #3b3b3b;
+
+  display: flex;
+  font-size: 1.5rem;
+  height: 90px;
+  justify-content: center;
+  margin: 10rem auto 0 auto;
+  text-align: center;
+  width: 420px;
+
+  /* CSS Positioning */
+  grid-column: 2;
+  grid-row: 3 / 4;
+}
