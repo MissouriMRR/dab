@@ -1,5 +1,5 @@
 import React from 'react';
-import './NumInput.css';
+import './index.css';
 
 /*
   Text-box component that can be reused for other components. Increment and

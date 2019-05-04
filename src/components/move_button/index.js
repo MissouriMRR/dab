@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './MoveComponent.css';
-import './SubComponents.css'
+import './index.css';
+import '../extra_styles/index.css'
 
-import Input from './NumInput';
+import Input from '../num_input';
 
 /*
   MoveComponent takes in values from the user to send a movement command

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './DebugGUI.css'
+import './index.css'
 
 //Component imports
-import KillButton from './KillButton';
-import MoveComponent from './MoveComponent'
-import TakeOffLandComponent from './TakeOffLandComponent';
-import YawComponent from './YawComponent';
-import ModeSwitchComponent from './ModeSwitchComponent';
-import DebugMainDisp from './DebugMainDisp';
+import MoveComponent from '../move_button';
+import ModeSwitch from '../mode_switch';
+import DisplayWindow from '../display_window';
+import KillButton from '../kill_button';
+import TakeoffLand from '../takeoff_land';
+import YawButton from '../yaw_button';
 
 /*
   The debug component is the menu for sending various commands to various
@@ -20,12 +20,12 @@ class DebugGUI extends Component {
       <div className="DebugGUIComponent">
         <MoveComponent />
 
-        <ModeSwitchComponent />
-        <DebugMainDisp />
+        <ModeSwitch />
+        <DisplayWindow />
         <KillButton />
 
-        <TakeOffLandComponent />
-        <YawComponent />
+        <TakeoffLand />
+        <YawButton />
       </div>
     );
   }

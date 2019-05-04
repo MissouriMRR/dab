@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
 //React router components
 import { Switch, HashRouter as Router, Route } from "react-router-dom";
 //Imports two menu components, a debug menu and production menu
-import DebugGUI from './DebugGUI';
-import ProductionGUI from './ProductionGUI';
-
+import DebugGUI from '../debug_GUI';
+import ProductionGUI from '../production_GUI';
 /*
   TODO: Finish the extra features and documentation
   - Redesign move component

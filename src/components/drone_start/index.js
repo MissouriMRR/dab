@@ -1,5 +1,5 @@
 import React from 'react';
-import './DroneStart.css'
+import './index.css'
 
 /*
   Button component to start the drones

@@ -31,15 +31,4 @@ createWindow = () => {
   mainWindow.webContents.openDevTools();
 }
 
-startNetwork = () => {
-  var client = new net.Socket();
-  //TODO: Find the port and server name to connect to
-  client.connect(3000, 'localhost');
-}
-
-startApp = () => {
-  createWindow();
-  startNetwork();
-}
-
-app.on('ready', startApp); //Starts the electron app
+app.on('ready', createWindow); //Starts the electron app

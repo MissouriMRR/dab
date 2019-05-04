@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './TakeOffLandComponent.css';
-import './SubComponents.css'
-import Input from './NumInput';
+import './index.css';
+import '../extra_styles/index.css'
+import Input from '../num_input';
 
 //import NumInput from './NumInput';
 
-class TakeOffLandComponent extends Component {
+class TakeoffLand extends Component {
   constructor(props) {
     super(props);
 
@@ -112,4 +112,4 @@ class TakeOffLandComponent extends Component {
   }
 }
 
-export default TakeOffLandComponent;
+export default TakeoffLand;

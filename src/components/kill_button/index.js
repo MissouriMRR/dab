@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './KillButton.css';
+import './index.css';
 
 class KillButton extends Component {
   /*

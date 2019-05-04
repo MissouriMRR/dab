@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './YawComponent.css';
+import './index.css';
 
 //Component imports
-import Input from './NumInput';
+import Input from '../num_input';
 
 /*
   Component for sending a yaw change command to the drone
   TODO: Restrict yaw range
 */
-class YawComponent extends Component {
+class YawButton extends Component {
   constructor(props) {
     super (props);
 
@@ -114,4 +114,4 @@ class YawComponent extends Component {
   }
 }
 
-export default YawComponent;
+export default YawButton;

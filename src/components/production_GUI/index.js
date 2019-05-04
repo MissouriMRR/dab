@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './ProductionGUI.css';
+import './index.css';
 
 //Component imports
-import ModeSwitchComponent from './ModeSwitchComponent';
-import DroneStartComponent from './DroneStart';
+import ModeSwitch from '../mode_switch';
+import DroneStart from '../drone_start';
 
 /*
   Portion of the program to be used in the actual competition. Allows sending
@@ -23,21 +23,21 @@ class ProductionGUI extends Component {
   render () {
     return (
       <div className="ProductionGUI">
-        <ModeSwitchComponent />
+        <ModeSwitch />
         <div className="DroneStartButtons">
-          <DroneStartComponent 
+          <DroneStart 
             droneName="Raph"
             startCommand={() => {this.startDrone("Raph")}}
           />
-          <DroneStartComponent 
+          <DroneStart 
             droneName="Leo"
             startCommand={() => {this.startDrone("Leo")}}
           />
-          <DroneStartComponent 
+          <DroneStart 
             droneName="Mickey"
             startCommand={() => {this.startDrone("Mickey")}}
           />
-          <DroneStartComponent 
+          <DroneStart 
             droneName="Donnie"
             startCommand={() => {this.startDrone("Donnie")}}
           />
