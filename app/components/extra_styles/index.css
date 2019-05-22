@@ -1,0 +1,25 @@
+/* CSS for mini components that are not its own React component */
+/* FIXME: Does this CSS belong here or somewhere like app.js?*/
+
+.ComponentTitle {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+}
+
+/* CSS for all forms in the webapp */
+.FormClass {
+    color: #5e5e5e;
+    /* Adds flexbox to the contents inside the form */
+    display: flex;
+    flex-direction: column;
+}
+
+/* CSS for standard submit buttons */
+.SubmitButton {
+    background: #D6FF94;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    color: #5e5e5e;
+    font-size: 1.5rem;
+    height: 5rem;
+}

@@ -1,0 +1,4 @@
+{
+  "DEBUG": "/",
+  "PRODUCTION": "/production_mode"
+}
