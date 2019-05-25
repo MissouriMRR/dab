@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import type { Store } from '../reducers/types';
 import Routes from '../Routes';
+import connect_now from '../utils/tcp_client';
 
 type Props = {
   store: Store,
@@ -11,6 +12,10 @@ type Props = {
 };
 
 export default class Root extends Component<Props> {
+  componentDidMount() {
+    connect_now();
+  }
+
   render() {
     const { store, history } = this.props;
     return (
