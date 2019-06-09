@@ -1,11 +1,22 @@
 import net from 'net';
 
-export default function connect_now() {
-  var client = new net.Socket();
+// TODO: Figure out how to send data
+const connectNow = () => {
+  const client = new net.Socket();
 
-  client.connect(25565, '120.0.0.1', function() {
-    console.log('Connected');
+  client.connect(10000, 'localhost', () => {
+    console.log('Did connect');
   });
 
-  console.log('If you made it past here, congrats!');
+  client.on('data', () => {
+    console.log('I received data!');
+  });
+
+  client.on('close', () => {
+    console.log('CLOSED');
+  });
 };
+
+export default function establishConnection(msg) {
+  connectNow(msg);
+}

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styles from './index.css';
-import ext_styles from '../extra_styles/index.css';
-
-//Component imports
+import extStyles from '../extra_styles/index.css';
 import Input from '../num_input';
 
 /*
@@ -11,12 +9,12 @@ import Input from '../num_input';
 */
 class YawButton extends Component {
   constructor(props) {
-    super (props);
+    super(props);
 
-    //Yaw state has an angle measurement for yaw
+    // Yaw state has an angle measurement for yaw
     this.state = {
-      yaw_angle : {
-        value : '0'
+      yaw_angle: {
+        value: '0'
       }
     };
   }
@@ -28,17 +26,17 @@ class YawButton extends Component {
       event: Event handler used for gradding the name and state value
              of the component that updates. Implicitly called.
   */
-  handleChange = (event) => {
+  handleChange = event => {
     const field = event.target.name;
     const data = Number(event.target.value);
 
-    //Updates the value for the specific form
+    // Updates the value for the specific form
     this.setState({
-      [field] : {
-        value : data
+      [field]: {
+        value: data
       }
     });
-  }
+  };
 
   /*
     Decreases a state value by one.
@@ -48,14 +46,14 @@ class YawButton extends Component {
       value: The actual value of that state object
   */
   decrement = (field, value) => {
-    const new_val = Number(value) - 10;
+    const newVal = Number(value) - 10;
 
     this.setState({
-      [field] : {
-        value : new_val
+      [field]: {
+        value: newVal
       }
     });
-  }
+  };
 
   /*
     Increases a state value by one.
@@ -65,14 +63,14 @@ class YawButton extends Component {
       value: The actual value of that state object
   */
   increment = (field, value) => {
-    const new_val = Number(value) + 10;
+    const newVal = Number(value) + 10;
 
     this.setState({
-      [field] : {
-        value : new_val
+      [field]: {
+        value: newVal
       }
     });
-  }
+  };
 
   /*
     Submits an angle to the drone that will set its new yaw value
@@ -80,33 +78,36 @@ class YawButton extends Component {
     Parameters:
       event: Event handler that is implicitly passed in.
   */
-  submitYaw = (event) => {
-    //Prevents page from reloading when sending the command
+  submitYaw = event => {
+    // Prevents page from reloading when sending the command
     event.preventDefault();
 
     alert('Yaw changed by ' + this.state.yaw_angle.value);
-  }
+  };
 
-  render () {
+  render() {
     return (
-     <div className={styles.YawComponent}>
+      <div className={styles.YawComponent}>
         <h1>Yaw</h1>
         <h1>{this.state.yaw_angle.value}&deg;</h1>
-        <form className={ext_styles.FormClass}>
+        <form className={extStyles.FormClass}>
           <Input
             type="number"
             name="yaw_angle"
             value={this.state.yaw_angle.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement("yaw_angle",
-                            this.state.yaw_angle.value)
+              this.decrement('yaw_angle', this.state.yaw_angle.value);
             }}
             plusClick={() => {
-              this.increment("yaw_angle", this.state.yaw_angle.value)
+              this.increment('yaw_angle', this.state.yaw_angle.value);
             }}
           />
-          <button className={ext_styles.SubmitButton} onClick={this.submitYaw}>
+          <button
+            className={extStyles.SubmitButton}
+            onClick={this.submitYaw}
+            type="submit"
+          >
             Change Yaw
           </button>
         </form>

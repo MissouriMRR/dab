@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styles from './index.css';
-
-//Component imports
 import ModeSwitch from '../mode_switch';
 import DroneStart from '../drone_start';
 
@@ -16,30 +14,34 @@ class ProductionGUI extends Component {
     Params:
     Takes in the drone_name to specify which drone to start
   */
-  startDrone = (drone_name) => {
-    alert('Starting drone: ' + drone_name);
-  }
+  startDrone = droneName => {
+    alert('Starting drone: ' + droneName);
+  };
 
-  render () {
+  render() {
     return (
       <div className={styles.ProductionGUI}>
         <ModeSwitch />
         <div className={styles.DroneStartButtons}>
-          <DroneStart 
+          <DroneStart
             droneName="Raph"
-            startCommand={() => {this.startDrone("Raph")}}
+            startCommand={() => {this.startDrone("Raph");
+            }}
           />
-          <DroneStart 
+          <DroneStart
             droneName="Leo"
-            startCommand={() => {this.startDrone("Leo")}}
+            startCommand={() => {this.startDrone("Leo");
+            }}
           />
-          <DroneStart 
+          <DroneStart
             droneName="Mickey"
-            startCommand={() => {this.startDrone("Mickey")}}
+            startCommand={() => {this.startDrone("Mickey");
+            }}
           />
-          <DroneStart 
+          <DroneStart
             droneName="Donnie"
-            startCommand={() => {this.startDrone("Donnie")}}
+            startCommand={() => {this.startDrone("Donnie");
+            }}
           />
         </div>
       </div>

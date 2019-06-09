@@ -13,9 +13,9 @@ import styles from './index.css';
     minusClick: Specifies the function for clicking the minus sign
     plusClick: Specifies the function for clicking the plus sign
 */
-const Input = (props) => {
+const Input = props => {
   return (
-    <div className={styles.InputComponent} >
+    <div className={styles.InputComponent}>
       <h1 onClick={props.minusClick}>-</h1>
       <input
         type={props.type}
@@ -24,8 +24,8 @@ const Input = (props) => {
         onChange={props.changeHandler}
       />
       <h1 onClick={props.plusClick}>+</h1>
-    </div>    
+    </div>
   );
-}
+};
 
 export default Input;

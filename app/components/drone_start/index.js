@@ -14,8 +14,8 @@ const DroneStart = props => {
     <div
       className={styles.DroneStartComponent}
       id={styles.Leo}
-      onClick={props.startCommand}    
-      >
+      onClick={props.startCommand}
+    >
       <h1>Start {props.droneName}</h1>
     </div>
   );

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import styles from './index.css'
-
-//Component imports
+import styles from './index.css';
 import MoveComponent from '../move_button';
 import ModeSwitch from '../mode_switch';
 import DisplayWindow from '../display_window';

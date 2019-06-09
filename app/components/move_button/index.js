@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './index.css';
-import ext_styles from '../extra_styles/index.css'
+import extStyles from '../extra_styles/index.css';
 
 import Input from '../num_input';
 
@@ -38,17 +38,17 @@ class MoveComponent extends Component {
       event: Used to grab the name prop of the modified form input.
              Implicitly passed in.
   */
-  handleChange = (event) => {
+  handleChange = event => {
     const field = event.target.name;
     const data = Number(event.target.value);
 
-    //Updates the specific direction based on what textbox is modified
+    // Updates the specific direction based on what textbox is modified
     this.setState({
-      [field] : {
-        value : data
+      [field]: {
+        value: data
       }
     });
-  }
+  };
 
   /*
     Decreases a state value by one.
@@ -58,14 +58,14 @@ class MoveComponent extends Component {
       value: The actual value of that state object
   */
   decrement = (field, value) => {
-    const new_val = Number(value) - 1;
+    const newVal = Number(value) - 1;
 
     this.setState({
-      [field] : {
-        value : new_val
+      [field]: {
+        value: newVal
       }
     });
-  }
+  };
 
   /*
     Increases a state value by one.
@@ -75,14 +75,14 @@ class MoveComponent extends Component {
       value: The actual value of that state object
   */
   increment = (field, value) => {
-    const new_val = Number(value) + 1;
+    const newVal = Number(value) + 1;
 
     this.setState({
-      [field] : {
-        value : new_val
+      [field]: {
+        value: newVal
       }
     });
-  }
+  };
 
   /*
     Takes in the user's movement directions and then send that command
@@ -91,21 +91,26 @@ class MoveComponent extends Component {
     Parameters:
       event: Used for event handling. Implicitly passed in
   */
-  handleSubmit = (event) => {
-    //Prevents page from reloading when sending the command
+  handleSubmit = event => {
+    // Prevents page from reloading when sending the command
     event.preventDefault();
 
-    alert('Move command with north: ' + this.state.north_dir.value
-    + 'm east: ' + this.state.east_dir.value
-    + 'm down: ' + this.state.down_dir.value + 'm'
+    alert(
+      'Move command with north: ' +
+        this.state.north_dir.value +
+        'm east: ' +
+        this.state.east_dir.value +
+        'm down: ' +
+        this.state.down_dir.value +
+        'm'
     );
-  }
+  };
 
-  render () {
+  render() {
     return (
       <div className={styles.MoveButton}>
-        <h1 className={ext_styles.ComponentTitle}>Move (m)</h1>
-        <form className={ext_styles.FormClass}>
+        <h1 className={extStyles.ComponentTitle}>Move (m)</h1>
+        <form className={extStyles.FormClass}>
           <h1>North</h1>
           <Input
             type="number"
@@ -113,10 +118,10 @@ class MoveComponent extends Component {
             value={this.state.north_dir.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement("north_dir", this.state.north_dir.value)
+              this.decrement('north_dir', this.state.north_dir.value);
             }}
             plusClick={() => {
-              this.increment("north_dir", this.state.north_dir.value)
+              this.increment('north_dir', this.state.north_dir.value);
             }}
           />
           <h1>East</h1>
@@ -126,10 +131,10 @@ class MoveComponent extends Component {
             value={this.state.east_dir.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement("east_dir", this.state.east_dir.value)
+              this.decrement('east_dir', this.state.east_dir.value);
             }}
             plusClick={() => {
-              this.increment("east_dir", this.state.east_dir.value)
+              this.increment('east_dir', this.state.east_dir.value);
             }}
           />
           <h1>Down</h1>
@@ -139,13 +144,17 @@ class MoveComponent extends Component {
             value={this.state.down_dir.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement("down_dir", this.state.down_dir.value)
+              this.decrement('down_dir', this.state.down_dir.value);
             }}
             plusClick={() => {
-              this.increment("down_dir", this.state.down_dir.value)
+              this.increment('down_dir', this.state.down_dir.value);
             }}
           />
-          <button className={ext_styles.SubmitButton} onClick={this.handleSubmit}>
+          <button
+            className={extStyles.SubmitButton}
+            onClick={this.handleSubmit}
+            type="submit"
+          >
             Send Command
           </button>
         </form>

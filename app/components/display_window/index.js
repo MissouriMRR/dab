@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styles from './index.css'
+import establishConnection from '../../utils/tcp_client';
+import styles from './index.css';
 
 /*
 Currently just displays text.
@@ -8,10 +9,28 @@ variables like altitude, and allow you to send custom terminal commands
 to the drone.
 */
 class DisplayWindow extends Component {
-  render () {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      message: ''
+    };
+  }
+
+  componentDidMount() {
+    establishConnection();
+  }
+
+  changeStatus = () => {
+    this.setState({
+      message: 'Changed'
+    });
+  };
+
+  render() {
     return (
       <div className={styles.DebugMainDisplay}>
-        <h1>Welcome to the debug mode.</h1>
+        <h1>{this.state.message}</h1>
       </div>
     );
   }

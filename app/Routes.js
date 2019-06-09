@@ -4,7 +4,6 @@ import routes from './constants/routes';
 import App from './containers/App';
 import DebugGUI from './components/debug_GUI';
 import ProductionGUI from './components/production_GUI';
-import HomePage from '../../../coding_testbed/electron-react-boilerplate/app/containers/HomePage';
 
 export default () => (
   <App>
