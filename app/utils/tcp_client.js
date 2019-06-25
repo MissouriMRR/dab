@@ -1,25 +1,30 @@
 import net from 'net';
 
-// TODO: Figure out how to send a heal command as a tablet
-const connectNow = () => {
+// TODO: Add ability to parse more complex commands with multiple arguments
+const parseCommand = command => {
+  return command;
+};
+
+// Establishes a connection to the server to send a command and disconnects
+const connectNow = command => {
   const client = new net.Socket();
 
   client.connect(10000, 'localhost', () => {
-    console.log('Did connect');
-    client.write('tablet steve');
+    console.log('Connected to server');
+    client.write('dashboard steve');
   });
 
   client.on('data', data => {
-    console.log('I received: ' + data);
-    client.write('heal23');
+    console.log(`I received: ${data}`);
+    client.write(command);
     client.destroy();
   });
 
   client.on('close', () => {
-    console.log('CLOSED');
+    console.log('Client closed');
   });
 };
 
-export default function establishConnection(msg) {
-  connectNow(msg);
+export default function sendCommand(msg) {
+  connectNow(parseCommand(msg));
 }

@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import styles from './index.css';
 import extStyles from '../extra_styles/index.css';
 import Input from '../num_input';
+import sendCommand from '../../utils/tcp_client';
 
 class TakeoffLand extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      takeoff_altitude: {
+      takeoffAltitude: {
         value: '0'
       }
     };
@@ -66,34 +67,33 @@ class TakeoffLand extends Component {
     // TODO: Validate takeoff parameters and send takeoff command
     // Prevents page from reloading when sending the command
     event.preventDefault();
+
+    // For now, just launches a default takeoff command
+    sendCommand('takeoff');
   };
 
   handleLand = event => {
-    // TODO: Make the drone land
     // Prevents page from reloading when sending the command
     event.preventDefault();
+    sendCommand('land');
   };
 
   render() {
+    const { takeoffAltitude } = this.state;
+
     return (
       <div className={styles.TakeOffLandComponent}>
         <form className={extStyles.FormClass}>
           <Input
             type="number"
             name="takeoff_altitude"
-            value={this.state.takeoff_altitude.value}
+            value={takeoffAltitude.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement(
-                'takeoff_altitude',
-                this.state.takeoff_altitude.value
-              );
+              this.decrement('takeoff_altitude', takeoffAltitude.value);
             }}
             plusClick={() => {
-              this.increment(
-                'takeoff_altitude',
-                this.state.takeoff_altitude.value
-              );
+              this.increment('takeoff_altitude', takeoffAltitude.value);
             }}
           />
           <button
@@ -101,7 +101,7 @@ class TakeoffLand extends Component {
             onClick={this.handleTakeOff}
             type="submit"
           >
-            TakeOff <b>({this.state.takeoff_altitude.value}m)</b>
+            TakeOff <b>({takeoffAltitude.value}m)</b>
           </button>
           <button
             className={styles.LandButton}

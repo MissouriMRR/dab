@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './index.css';
 
 /*
@@ -14,18 +15,32 @@ import styles from './index.css';
     plusClick: Specifies the function for clicking the plus sign
 */
 const Input = props => {
+  const { type, name, value, changeHandler, minusClick, plusClick } = props;
+
   return (
     <div className={styles.InputComponent}>
-      <h1 onClick={props.minusClick}>-</h1>
-      <input
-        type={props.type}
-        name={props.name}
-        value={props.value}
-        onChange={props.changeHandler}
-      />
-      <h1 onClick={props.plusClick}>+</h1>
+      <button type="button" onClick={minusClick}>
+        -
+      </button>
+      <input type={type} name={name} value={value} onChange={changeHandler} />
+      <button type="button" onClick={plusClick}>
+        +
+      </button>
     </div>
   );
+};
+
+Input.propTypes = {
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.number,
+  changeHandler: PropTypes.func.isRequired,
+  minusClick: PropTypes.func.isRequired,
+  plusClick: PropTypes.func.isRequired
+};
+
+Input.defaultProps = {
+  value: 0
 };
 
 export default Input;

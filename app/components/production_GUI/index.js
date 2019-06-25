@@ -15,7 +15,7 @@ class ProductionGUI extends Component {
     Takes in the drone_name to specify which drone to start
   */
   startDrone = droneName => {
-    alert('Starting drone: ' + droneName);
+    alert(`Starting drone: ${droneName}`);
   };
 
   render() {
@@ -25,22 +25,26 @@ class ProductionGUI extends Component {
         <div className={styles.DroneStartButtons}>
           <DroneStart
             droneName="Raph"
-            startCommand={() => {this.startDrone("Raph");
+            startCommand={() => {
+              this.startDrone('Raph');
             }}
           />
           <DroneStart
             droneName="Leo"
-            startCommand={() => {this.startDrone("Leo");
+            startCommand={() => {
+              this.startDrone('Leo');
             }}
           />
           <DroneStart
             droneName="Mickey"
-            startCommand={() => {this.startDrone("Mickey");
+            startCommand={() => {
+              this.startDrone('Mickey');
             }}
           />
           <DroneStart
             droneName="Donnie"
-            startCommand={() => {this.startDrone("Donnie");
+            startCommand={() => {
+              this.startDrone('Donnie');
             }}
           />
         </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import establishConnection from '../../utils/tcp_client';
 import styles from './index.css';
 
 /*
@@ -11,14 +10,9 @@ to the drone.
 class DisplayWindow extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      message: ''
+      message: 'Welcome to the Drone Action Board'
     };
-  }
-
-  componentDidMount() {
-    establishConnection();
   }
 
   changeStatus = () => {
@@ -28,9 +22,10 @@ class DisplayWindow extends Component {
   };
 
   render() {
+    const { message } = this.state;
     return (
       <div className={styles.DebugMainDisplay}>
-        <h1>{this.state.message}</h1>
+        <h1>{message}</h1>
       </div>
     );
   }

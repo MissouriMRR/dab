@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './index.css';
 import extStyles from '../extra_styles/index.css';
 import Input from '../num_input';
+import sendCommand from '../../utils/tcp_client';
 
 /*
   Component for sending a yaw change command to the drone
@@ -13,7 +14,7 @@ class YawButton extends Component {
 
     // Yaw state has an angle measurement for yaw
     this.state = {
-      yaw_angle: {
+      yawAngle: {
         value: '0'
       }
     };
@@ -81,26 +82,31 @@ class YawButton extends Component {
   submitYaw = event => {
     // Prevents page from reloading when sending the command
     event.preventDefault();
+    const { yawAngle } = this.state;
 
-    alert('Yaw changed by ' + this.state.yaw_angle.value);
+    alert(`Yaw changed by ${yawAngle.value}`);
+    // TODO: Send yaw command to server
+    sendCommand('yaw');
   };
 
   render() {
+    const { yawAngle } = this.state;
+
     return (
       <div className={styles.YawComponent}>
         <h1>Yaw</h1>
-        <h1>{this.state.yaw_angle.value}&deg;</h1>
+        <h1>{yawAngle.value}&deg;</h1>
         <form className={extStyles.FormClass}>
           <Input
             type="number"
             name="yaw_angle"
-            value={this.state.yaw_angle.value}
+            value={yawAngle.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement('yaw_angle', this.state.yaw_angle.value);
+              this.decrement('yaw_angle', yawAngle.value);
             }}
             plusClick={() => {
-              this.increment('yaw_angle', this.state.yaw_angle.value);
+              this.increment('yaw_angle', yawAngle.value);
             }}
           />
           <button

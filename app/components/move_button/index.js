@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import establishConnection from '../../utils/tcp_client';
 import styles from './index.css';
 import extStyles from '../extra_styles/index.css';
 
@@ -19,13 +20,13 @@ class MoveComponent extends Component {
       of that direction. Current supports north, east, and down direction.
     */
     this.state = {
-      north_dir: {
+      northDirection: {
         value: '0'
       },
-      east_dir: {
+      eastDirection: {
         value: '0'
       },
-      down_dir: {
+      downDirection: {
         value: '0'
       }
     };
@@ -95,18 +96,13 @@ class MoveComponent extends Component {
     // Prevents page from reloading when sending the command
     event.preventDefault();
 
-    alert(
-      'Move command with north: ' +
-        this.state.north_dir.value +
-        'm east: ' +
-        this.state.east_dir.value +
-        'm down: ' +
-        this.state.down_dir.value +
-        'm'
-    );
+    // TODO: Customize movement actions based on user choice
+    establishConnection('move');
   };
 
   render() {
+    const { northDirection, eastDirection, downDirection } = this.state;
+
     return (
       <div className={styles.MoveButton}>
         <h1 className={extStyles.ComponentTitle}>Move (m)</h1>
@@ -114,40 +110,40 @@ class MoveComponent extends Component {
           <h1>North</h1>
           <Input
             type="number"
-            name="north_dir"
-            value={this.state.north_dir.value}
+            name="northDirection"
+            value={northDirection.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement('north_dir', this.state.north_dir.value);
+              this.decrement('northDirection', northDirection.value);
             }}
             plusClick={() => {
-              this.increment('north_dir', this.state.north_dir.value);
+              this.increment('northDirection', northDirection.value);
             }}
           />
           <h1>East</h1>
           <Input
             type="number"
-            name="east_dir"
-            value={this.state.east_dir.value}
+            name="eastDirection"
+            value={eastDirection.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement('east_dir', this.state.east_dir.value);
+              this.decrement('eastDirection', eastDirection.value);
             }}
             plusClick={() => {
-              this.increment('east_dir', this.state.east_dir.value);
+              this.increment('eastDirection', eastDirection.value);
             }}
           />
           <h1>Down</h1>
           <Input
             type="number"
-            name="down_dir"
-            value={this.state.down_dir.value}
+            name="downDirection"
+            value={downDirection.value}
             changeHandler={this.handleChange}
             minusClick={() => {
-              this.decrement('down_dir', this.state.down_dir.value);
+              this.decrement('downDirection', downDirection.value);
             }}
             plusClick={() => {
-              this.increment('down_dir', this.state.down_dir.value);
+              this.increment('downDirection', downDirection.value);
             }}
           />
           <button

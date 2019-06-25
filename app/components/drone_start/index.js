@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './index.css';
 
 /*
@@ -10,15 +11,23 @@ import styles from './index.css';
     //FIXME: Get CSS IDs working with imported stylesheets and props
 */
 const DroneStart = props => {
+  const { startCommand, droneName } = props;
+
   return (
-    <div
+    <button
       className={styles.DroneStartComponent}
       id={styles.Leo}
-      onClick={props.startCommand}
+      onClick={startCommand}
+      type="button"
     >
-      <h1>Start {props.droneName}</h1>
-    </div>
+      <h1>Start {droneName}</h1>
+    </button>
   );
+};
+
+DroneStart.propTypes = {
+  startCommand: PropTypes.func.isRequired,
+  droneName: PropTypes.string.isRequired
 };
 
 export default DroneStart;
