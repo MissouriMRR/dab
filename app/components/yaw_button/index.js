@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './index.css';
 import extStyles from '../extra_styles/index.css';
 import Input from '../num_input';
-import sendCommand from '../../utils/tcp_client';
+import { sendCommand } from '../../utils/tcp_client';
 
 /*
   Component for sending a yaw change command to the drone

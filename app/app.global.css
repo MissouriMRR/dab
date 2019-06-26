@@ -2,11 +2,11 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap');
 
 body {
   color: #5e5e5e;
-  font-family: Oxygen, sans-serif;
+  font-family: 'Oxygen', sans-serif;
   height: 88vh;
   margin: 5vh 5vh 5vh 5vh;
   text-align: center;

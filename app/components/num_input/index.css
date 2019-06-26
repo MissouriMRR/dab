@@ -1,44 +1,47 @@
 /* CSS for the numerical input component */
 .InputComponent {
-    border-top: solid 5px #5e5e5e;
-    border-bottom: solid 5px #5e5e5e;
-    border-left: none;
-    border-right: none;
-    height: 3.5rem;
-    user-select: none;
-    /* Flexbox properties */
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
+  border-top: solid 5px #5e5e5e;
+  border-bottom: solid 5px #5e5e5e;
+  border-left: none;
+  border-right: none;
+  height: 3.5rem;
+  user-select: none;
+
+  /* Flexbox properties */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* Override styles of the default input textbox styles */
 .InputComponent input {
-    border: none;
-    background: #f6f6f6;
-    color: #5e5e5e;
-    font-size: 2rem;
-    text-align: center;
-    width: 60%;
+  border: none;
+  background: #f6f6f6;
+  color: #5e5e5e;
+  font-size: 2rem;
+  text-align: center;
+  width: 60%;
 }
 
-.InputComponent h1 {
-    height: 90%;
-    font-size: 1.75rem;
-    font-weight: bold;
-    width: 100%;
+.InputComponent button {
+  background-color: #f6f6f6;
+  border: none;
+  color: #5e5e5e;
+  height: 90%;
+  font-size: 1.75rem;
+  font-weight: bold;
+  width: 100%;
 }
 
-/* Used to hide the number input controls for the form input*/
-input[type="number"] {
-    -webkit-appearance: textfield;
-       -moz-appearance: textfield;
-            appearance: textfield;
-  }
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
+/* Used to hide the number input controls for the form input */
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

@@ -25,6 +25,14 @@ const connectNow = command => {
   });
 };
 
-export default function sendCommand(msg) {
+export function sendCommand(msg) {
   connectNow(parseCommand(msg));
+}
+
+export function incrementAndDecrement(stepCount, increaseVal) {
+  if (increaseVal) {
+    return Number(stepCount) - 1;
+  }
+
+  return Number(stepCount) + 1;
 }

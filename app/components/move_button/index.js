@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import establishConnection from '../../utils/tcp_client';
+import { sendCommand } from '../../utils/tcp_client';
 import styles from './index.css';
 import extStyles from '../extra_styles/index.css';
 
@@ -97,7 +97,7 @@ class MoveComponent extends Component {
     event.preventDefault();
 
     // TODO: Customize movement actions based on user choice
-    establishConnection('move');
+    sendCommand('move');
   };
 
   render() {

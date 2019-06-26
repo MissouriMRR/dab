@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import establishConnection from '../../utils/tcp_client';
+import { sendCommand } from '../../utils/tcp_client';
 import styles from './index.css';
 
 class KillButton extends Component {
@@ -12,7 +12,7 @@ class KillButton extends Component {
       <button
         type="button"
         className={styles.KillButton}
-        onClick={() => establishConnection('kill')}
+        onClick={() => sendCommand('kill')}
       >
         <h1>Kill</h1>
       </button>
