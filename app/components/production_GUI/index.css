@@ -6,12 +6,14 @@
 }
 
 .DroneStartButtons {
+  background-color: #78be20;
   border: solid 5px #5e5e5e;
   border-radius: 10px;
   margin: auto;
   height: auto;
   min-width: 40vw;
-  /* Restricts the width so buttons show up on a 4x4 flexbox grid*/
+
+  /* Restricts the width so buttons show up on a 4x4 flexbox grid */
   max-width: 40rem;
 
   /* Flexbox settings */

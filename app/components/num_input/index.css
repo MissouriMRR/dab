@@ -1,5 +1,6 @@
 /* CSS for the numerical input component */
 .InputComponent {
+  background-color: #fdda24;
   border-top: solid 5px #5e5e5e;
   border-bottom: solid 5px #5e5e5e;
   border-left: none;
@@ -17,7 +18,7 @@
 /* Override styles of the default input textbox styles */
 .InputComponent input {
   border: none;
-  background: #f6f6f6;
+  background: #fdda24;
   color: #5e5e5e;
   font-size: 2rem;
   text-align: center;
@@ -25,7 +26,7 @@
 }
 
 .InputComponent button {
-  background-color: #f6f6f6;
+  background-color: #fdda24;
   border: none;
   color: #5e5e5e;
   height: 90%;

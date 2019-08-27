@@ -1,37 +1,37 @@
 .TakeOffLandComponent {
-    background: #f6f6f6;
-    border: solid 5px #5e5e5e;
-    border-top: none;
-    border-radius: 0 0 15px 15px;
-    height: 14.1rem;
-    margin: 10vh auto auto auto;
-    width: 250px;
+  background: #78be20;
+  border: solid 5px #5e5e5e;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+  height: 14.1rem;
+  margin: 10vh auto auto auto;
+  width: 250px;
 
-    /* Flexbox properties */
-    display: flex;
-    flex-direction: column;
+  /* Flexbox properties */
+  display: flex;
+  flex-direction: column;
 
-    /* CSS Grid positioning */
-    grid-column: 3 / 3;
-    grid-row: 1 / 2;
+  /* CSS Grid positioning */
+  grid-column: 3 / 3;
+  grid-row: 1 / 2;
 }
 
-.TakeoffButton{
-    background: #D6FF94;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: solid 5px #5e5e5e;
-    color: #5e5e5e;
-    font-size: 1.5rem;
-    height: 5rem;
+.TakeoffButton {
+  background: #78be20;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: solid 5px #5e5e5e;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 5rem;
 }
 
 .LandButton {
-    background: #D6FF94;
-    border: none;
-    border-radius: 0 0 10px 10px;
-    color: #5e5e5e;
-    font-size: 1.5rem;
-    height: 5rem;
+  background: #78be20;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 5rem;
 }
