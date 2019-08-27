@@ -1,29 +1,12 @@
-# MRR Drone Controller
+# Drone Action Board
 
-Let go of your physical controller and let the drone do the work. Contains two modes, production and debug.
+Desktop app used to send commands and enable autonomous features for custom-built drones by Missouri S&T's Multirotor Design Team.  
+Built with React on top of Electron with Node being used to send TCP network commands to the Multirotor Team's python server in order to communicate with the drones.
 
-Production has four start buttons for four drones. The drone software takes care of the rest.
+Has a debug/testing mode meant for testing out autonomous commands for the drone, like moving straight for a meter, and a production mode for one-click activation of complex autonomous routines to be used during competition for the _International Aerial Robotics Challenge._
 
-Debug lets you takeoff, move, and land the drone without handling that physical controller.
+## Setup
 
-Still, keep the physical controller just for that killswitch, even though there's also one built into this app.
+Uses yarn as the package manager. Install yarn to your system and type `yarn` to download the dependencies.
 
-## Tech stack
-
-### React
-
-Javascript library that lets you build webapps with Javascript. 
-
-### Electron
-
-Lets you take a webapp and turn it into a desktop application.
-
-## Developer Documentation
-
-### Setup/Launch
-
-Make sure you have Yarn and NodeJS installed. Go into the IARC/2019/tools/drone_controller folder and type
-```
-yarn
-```
-to download all the necessary files to run the app.
+Then type `yarn dev` to open up a development preview.

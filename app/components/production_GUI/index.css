@@ -1,0 +1,28 @@
+.ProductionGUI {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 25vh);
+  height: 88vh;
+}
+
+.DroneStartButtons {
+  background-color: #78be20;
+  border: solid 5px #5e5e5e;
+  border-radius: 10px;
+  margin: auto;
+  height: auto;
+  min-width: 40vw;
+
+  /* Restricts the width so buttons show up on a 4x4 flexbox grid */
+  max-width: 40rem;
+
+  /* Flexbox settings */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  /* CSS Grid Positioning for wrapper */
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+}

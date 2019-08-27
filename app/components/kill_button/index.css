@@ -1,0 +1,20 @@
+.KillButton {
+  background: #d85e5e;
+  border: solid 5px #5e5e5e;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-family: 'Oxygen', sans-serif;
+  height: 90px;
+  margin: 10rem auto 0 auto;
+  text-align: center;
+  width: 420px;
+
+  /* CSS Positioning */
+  grid-column: 2;
+  grid-row: 3 / 4;
+}
+
+.KillButton h1 {
+  color: #fff;
+  margin: auto;
+}
